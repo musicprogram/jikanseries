@@ -1,0 +1,54 @@
+<div class="container-fluid fondo_i">
+  
+<div class="">
+  <p id="notice"><%= notice %></p>
+  <br>
+
+<div class="row">
+  <div class="col-md-4"><%= image_tag @movie.avatar.url,  class:'imagen_1 img-responsive' %></div>
+  <div class="col-md-8">
+   <h1 class="page-header nn">
+     <%= @movie.name %>
+      <small class="iz"><a href="<%= @movie.link %>">Ver Película</a></small>
+   </h1>
+   
+     <strong>Tag:</strong>
+      <%= @movie.tag %>
+
+
+      <p>
+  
+</p>
+
+<div class="descripcion">
+  <h4 class="letrashow">
+    <%= @movie.description %>
+  </h4>
+</div>
+  </div>
+</div>
+    <br>
+  <div class="row">
+    <div class="col-md-4"><iframe class="sombra_1" src="<%= @movie.video %>" frameborder="0" allowfullscreen></iframe></div>
+    <div class="col-md-8">
+
+
+    </div>
+  </div>
+
+  
+
+
+
+
+  
+
+
+
+
+
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>
+<br>
+</div>
+</div>
