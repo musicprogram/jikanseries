@@ -9,17 +9,24 @@
   <div class="col-md-8">
    <h1 class="page-header nn">
      <%= @movie.name %>
+    
       <small class="iz"><a href="<%= @movie.link %>">Ver Película</a></small>
    </h1>
    
-     <strong>Tag:</strong>
-      <%= @movie.tag %>
-
-
-      <p>
-  
-</p>
-
+   <table  class="table table-hover">
+     <tr>
+       <td> <strong>Año:</strong>
+      <%= @movie.year %></td>
+       <td><strong>Director:</strong>
+      <%= @movie.director %></td>
+       <td><strong>Duracion:</strong>
+      <%= @movie.duration %></td>
+       <td><strong>País:</strong>
+      <%= @movie.country %></td>
+     </tr>
+   </table>
+      
+ 
 <div class="descripcion">
   <h4 class="letrashow">
     <%= @movie.description %>
@@ -29,26 +36,47 @@
 </div>
     <br>
   <div class="row">
-    <div class="col-md-4"><iframe class="sombra_1" src="<%= @movie.video %>" frameborder="0" allowfullscreen></iframe></div>
-    <div class="col-md-8">
-
+    <div class="col-md-5"><iframe class="sombra_1" src="<%= @movie.video %>" frameborder="0" allowfullscreen></iframe></div>
+    <div class="col-md-7">
+    
+     <div class="descripcion scroll">
+  
+    <%= render 'list_comments' %>
+  </div>
 
     </div>
   </div>
+<%= link_to 'Editar', edit_movie_path(@movie) %> |
+<%= link_to 'Atras', movies_path %>
+
+
+  <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+       
+      </div>
+      <div class="modal-body">
+        <%= render 'comments' %>
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+  
+    
+ 
+</div>
 
   
 
-
-
-
-  
-
-
-
-
-
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
-<br>
 </div>
 </div>
+
+

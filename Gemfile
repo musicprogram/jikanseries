@@ -48,3 +48,4 @@ end
 gem 'faker', '~> 1.6', '>= 1.6.1'
 
 gem "paperclip", "~> 4.3"
+

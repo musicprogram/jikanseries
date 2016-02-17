@@ -6,6 +6,10 @@ class CreateMovies < ActiveRecord::Migration
       t.string :video
       t.string :tag
       t.text :description
+      t.string :year
+      t.string :director
+      t.string :duration
+      t.string :country
 
       t.timestamps null: false
     end

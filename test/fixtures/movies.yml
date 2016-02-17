@@ -6,6 +6,10 @@ one:
   video: MyString
   tag: MyString
   description: MyText
+  year: MyString
+  director: MyString
+  duration: MyString
+  country: MyString
 
 two:
   name: MyString
@@ -13,3 +17,7 @@ two:
   video: MyString
   tag: MyString
   description: MyText
+  year: MyString
+  director: MyString
+  duration: MyString
+  country: MyString

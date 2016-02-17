@@ -69,8 +69,21 @@ footer {
 
 .fondo_i{
     background-image:url('fondoshow.jpg');
-    max-width: 100%;
-    height: auto;
+    /* Nos aseguramos que la imagen de fondo este centrada vertical y
+    horizontalmente en todo momento */
+  background-position: center center;
+
+  /* La imagen de fondo no se repite */
+  background-repeat: no-repeat;
+
+  /* La imagen de fondo está fija en el viewport, de modo que no se mueva cuando
+     la altura del contenido supere la altura de la imagen. */
+  background-attachment: fixed;
+
+  /* La imagen de fondo se reescala cuando se cambia el ancho de ventana
+     del navegador */
+  background-size: cover;
+    
   }
 
 .sombra{
@@ -105,7 +118,7 @@ footer {
 }
 
 .letrashow{
-  color: white;
+ 
   
 }
 
@@ -121,6 +134,22 @@ footer {
   box-shadow: 4px 4px 17px 0px rgba(0,0,0,0.75);
 }
 
+.descripcion_1{
+  width: 250px;
+  height: 110px;
+  background: rgba(0, 0, 0, 0.6);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 9px;
+  -webkit-box-shadow: 4px 4px 17px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 4px 17px 0px rgba(0,0,0,0.75);
+  box-shadow: 4px 4px 17px 0px rgba(0,0,0,0.75);
+  position: relative;
+  float: left;
+}
+
 .iz{
   position: relative;
   float: right;
@@ -129,4 +158,61 @@ footer {
 .nn{
   text-shadow: 2px 2px  rgba(0, 0, 0, 0.6);
   font-weight: bold;
+}
+
+
+
+img {
+    width:100%;
+}
+
+
+
+
+
+
+  .fondoform{
+  background-image: url("mary.jpg") ;
+  /* Nos aseguramos que la imagen de fondo este centrada vertical y
+    horizontalmente en todo momento */
+  background-position: center center;
+
+  /* La imagen de fondo no se repite */
+  background-repeat: no-repeat;
+
+  /* La imagen de fondo está fija en el viewport, de modo que no se mueva cuando
+     la altura del contenido supere la altura de la imagen. */
+  background-attachment: fixed;
+
+  /* La imagen de fondo se reescala cuando se cambia el ancho de ventana
+     del navegador */
+  background-size: cover;
+
+}
+
+
+.scroll{
+    overflow-x: auto;
+    min-height: 0.01%;
+    height:305px;
+    overflow-y:scroll;
+    overflow-x:none;
+    
+}
+
+.modal-body{
+background-color: #2C2C2C;
+}
+
+.modal-header{
+   background: #2C2C2C;
+}
+
+
+.estrella{
+  position: relative;
+  float: left;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
 }

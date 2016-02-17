@@ -4,7 +4,7 @@
 .carousel{
     background: #2f4357;
     margin-top: 20px;
-    height: 396px;
+    
 }
 .carousel .item img{
     margin: 0 auto; /* Align slide image horizontally center */
@@ -36,25 +36,25 @@ img{
         <!-- Wrapper for carousel items -->
         <div class="carousel-inner">
             <div class="active item">
-                <%= image_tag("logojikan.png") %>
+                <%= image_tag("logojikan.png", class:'img-responsive') %>
          		<div class="carousel-caption">
                   
                 </div>
             </div>
             <div class="item">
-               <%= image_tag("logojikan1.jpg") %>
+               <%= image_tag("logojikan1.jpg", class:'img-responsive') %>
                 <div class="carousel-caption">
                  
                 </div>
             </div>
             <div class="item">
-                <%= image_tag("logojikan2.jpg") %>
+                <%= image_tag("logojikan2.jpg", class:'img-responsive') %>
                 <div class="carousel-caption">
                  
                 </div>
             </div>
             <div class="item">
-                <%= image_tag("logojikan3.jpg") %>
+                <%= image_tag("logojikan3.jpg", class:'img-responsive') %>
                 <div class="carousel-caption">
                  
                 </div>
@@ -95,7 +95,7 @@ img{
            <% @movies.each do |movie| %>
            <div class="row">
             <div class="col-md-12 portfolio-item">
-              
+           
               <div class="row">
                 <div class="col-sm-12 col-md-6">
                   <%= link_to  movie do %>
@@ -128,7 +128,7 @@ img{
         <!-- /.row -->
 
 
-        <!-- Footer -->
+ <!-- Footer -->
         <footer>
             <div class="row">
                 <div class="col-lg-12">
