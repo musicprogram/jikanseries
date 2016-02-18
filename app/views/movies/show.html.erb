@@ -2,11 +2,11 @@
   
 <div class="">
   <p id="notice"><%= notice %></p>
-  <br>
+
 
 <div class="row">
-  <div class="col-md-4"><%= image_tag @movie.avatar.url,  class:'imagen_1 img-responsive' %></div>
-  <div class="col-md-8">
+  <div class="col-md-5"><%= image_tag @movie.avatar.url,  class:'imagen_1 img-responsive' %></div>
+  <div class="col-md-7">
    <h1 class="page-header nn">
      <%= @movie.name %>
     
@@ -25,12 +25,25 @@
       <%= @movie.country %></td>
      </tr>
    </table>
-      
- 
+   <div class="row">
+       <div class="col-md-12 ">
+         <div class="">
+             
+           <div class="col-md-6 descripciont" id="actores">
+             <b>Actores:</b>  <%= @movie.actors %>
+           </div>
+           <div class="col-md-6 descripciont" id="categoria">
+             <b>Categoría:</b>  <%= @movie.category.name %>, TAGS <%= @movie.tag %>
+           </div>
+         </div>    
+       </div>
+     
+   </div>
+      <br>
 <div class="descripcion">
-  <h4 class="letrashow">
+  <h5 class="letrashow">
     <%= @movie.description %>
-  </h4>
+  </h5>
 </div>
   </div>
 </div>

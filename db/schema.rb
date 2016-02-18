@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160217190314) do
+ActiveRecord::Schema.define(version: 20160218021049) do
+
+  create_table "actors", force: :cascade do |t|
+    t.string   "name"
+    t.string   "last_name"
+    t.integer  "movie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "actors", ["movie_id"], name: "index_actors_on_movie_id"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.string   "user"
@@ -40,6 +56,8 @@ ActiveRecord::Schema.define(version: 20160217190314) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.text     "actors"
+    t.integer  "category_id"
   end
 
 end

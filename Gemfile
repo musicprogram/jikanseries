@@ -49,3 +49,5 @@ gem 'faker', '~> 1.6', '>= 1.6.1'
 
 gem "paperclip", "~> 4.3"
 
+gem 'bootstrap-sass', '~> 3.3.6'
+
