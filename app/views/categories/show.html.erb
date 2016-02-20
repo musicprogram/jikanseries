@@ -1,9 +1,26 @@
-<p id="notice"><%= notice %></p>
+<style>
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+  
+  #menu{
+    width: 5%;
+    background: green;
+    height: 600px;
+    float: left;
+    
+  }
+  
+  .posicion_img{
+    width: 50px;
+    height: 50px;
+  }
+  
+  .veleta{
+    position: absolute;
+  }
+</style>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+
+
+<%= image_tag("borde_vertical.png", class:" vara") %>
+<%= image_tag("tuerca.png", class:" centro") %>
+<%= image_tag("star1.png", class:" veleta") %>

@@ -51,3 +51,10 @@ gem "paperclip", "~> 4.3"
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
+gem 'devise'
+
+gem 'will_paginate', '~> 3.0.6'
+
+gem 'will_paginate-bootstrap'
+
+gem 'ransack'

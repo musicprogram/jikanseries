@@ -38,6 +38,13 @@ body.fondo {
     top: -15px;
 }
 
+.logo_1{
+    width:185px;
+    height:85px;
+    position: relative; 
+    top: -15px;
+}
+
 td{
     a {
 
@@ -62,6 +69,28 @@ footer {
   
 }
 
+.nuevo_1{
+  width: 50px;
+  height: 30px;
+  position: relative;
+  float: right;
+  margin-top: -4px;
+  
+
+  
+}
+.nuevo_2{
+  width: 50px;
+  height: 30px;
+  position: relative;
+  float: right;
+  margin-top: -4px;
+  
+
+  
+}
+
+
 .portfolio-item {
     
     margin-bottom: 25px;
@@ -75,7 +104,7 @@ footer {
 
 
 .fondo_i{
-    background-image:url('fondoshow.png');
+  background-image:url('fondoshow.png');
     /* Nos aseguramos que la imagen de fondo este centrada vertical y
     horizontalmente en todo momento */
   background-position: center center;
@@ -91,6 +120,9 @@ footer {
      del navegador */
   background-size: cover;
     
+  position: relative;
+  margin-top: -15px;
+  
   }
 
 .sombra{
@@ -162,7 +194,7 @@ footer {
 
 .descripciont{
   background: rgba(0, 0, 0, 0.6);
-  
+  border-radius: 9px;
   -webkit-box-shadow: 4px 4px 17px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 4px 4px 17px 0px rgba(0,0,0,0.75);
   box-shadow: 4px 4px 17px 0px rgba(0,0,0,0.75);
@@ -192,7 +224,7 @@ img {
 
 
   .fondoform{
-  background-image: url("max-resolution: .png;    ") ;
+  background-image: url("mary.png") ;
   /* Nos aseguramos que la imagen de fondo este centrada vertical y
     horizontalmente en todo momento */
   background-position: center center;
@@ -217,7 +249,8 @@ img {
     height:305px;
     overflow-y:scroll;
     overflow-x:none;
-    
+    position: relative;
+    margin-top: -32px;
 }
 
 .modal-body{
@@ -237,6 +270,15 @@ background-color: #2C2C2C;
   margin-bottom: 10px;
 }
 
+.estrella_1{
+
+  width: 40px;
+  height: 40px;
+  position: relative;
+  float: right;
+  margin-top: -25px;
+}
+
 iframe{
   max-width: 100%;
   height: auto;
@@ -250,6 +292,48 @@ iframe{
 #categoria{
   position: relative;
   float: right;
+}
+
+
+
+
+.puntua{
+  
+  font-size: 30px;
+  position: relative;
+  margin-top: -23px;
+  float: right;
+  color: #eff237;
+  margin-top: -15px;
+  text-shadow: 2px 2px  rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+}
+
+.page{
+  position: relative;
+  margin-top: 25px;
+}
+
+
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+} 
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 

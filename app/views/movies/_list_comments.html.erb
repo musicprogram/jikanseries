@@ -25,7 +25,7 @@
                             </a>
                             <div class="media-body">
                                 
-                              <h4 class="media-heading user_name">Usuario: <%= comment.user %></h4>
+                              <h4 class="media-heading user_name"><b><%= comment.user.upcase rescue nil %></b></h4>
                               <%= comment.body %> <br>
                             <% if comment.likes == "mala" %>
                               <%= image_tag("star1.png", class:'estrella') %>
@@ -46,9 +46,15 @@
                                  <%= image_tag("star1.png", class:'estrella') %>
                               <% end  %>
                             <% end %>
+                            
                             </div>
+                          <% if user_signed_in? %>  
+                            <%= link_to 'Eliminar', [comment.movie, comment],
+                           method: :delete,
+                           data: { confirm: 'Estas Seguro?' } %>
+                          <% end %> 
                           </div>
-                      
+                          
                       <% end %>
                        
                    </div>
@@ -58,5 +64,4 @@
                 </div>
        
        
-
 

@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <style type="text/css">
 .carousel{
@@ -36,7 +35,7 @@ img{
         <!-- Wrapper for carousel items -->
         <div class="carousel-inner">
             <div class="active item">
-                <%= image_tag("logojikan.png", class:'img-responsive') %>
+                <%= image_tag("banner_1.png", class:'img-responsive') %>
          		<div class="carousel-caption">
                   
                 </div>
@@ -72,18 +71,22 @@ img{
 
     <!-- Page Content -->
     <div class="container">
-
+   
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
               <div class="col-md-6">
-                 <h1 class="page-header">JikanSeries Películas
+                 <h1 class="page-header"><%= image_tag('logojikan.png',class:'logo_1') %>Películas
                  <small>Recientes</small>
                    
                 </h1>
               </div>
               <div class="col-md-6">
+                <% if user_signed_in? %>
+                
                  <%= link_to image_tag('cinta.png',class:'nuevo'), new_movie_path %>
+                 
+                <% end %> 
               </div>
                
             </div>
@@ -93,6 +96,8 @@ img{
         <!-- Projects Row -->
         
            <% @movies.each do |movie| %>
+            
+            
            <div class="row">
             <div class="col-md-12 portfolio-item">
            
@@ -108,15 +113,19 @@ img{
               </div>
                 
                
-                 
-               
                 <h3><%= link_to  movie do %>
                       <%= movie.name %>
                     <% end %>
                 </h3>
+                
                 <p><%= movie.description %></p>
-                <td><%= link_to 'Editar', edit_movie_path(movie) %></td>
-                <td><%= link_to 'Eliminar', movie, method: :delete, data: { confirm: 'Estas Seguro?' } %></td>
+                  <% if user_signed_in? %>
+                    <td><%= link_to 'Editar', edit_movie_path(movie) %></td>
+                    <td><%= link_to 'Eliminar', movie, method: :delete, data: { confirm: 'Estas Seguro?' } %></td>
+                  
+                  
+                  
+                  <% end %>
             <br></br>
             
             
@@ -126,8 +135,13 @@ img{
           <% end %>  
         
         <!-- /.row -->
+        
+        
+        
+        
 
 
+  <%= will_paginate @movies, renderer: BootstrapPagination::Rails %>
  <!-- Footer -->
         <footer>
             <div class="row">

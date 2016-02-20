@@ -6,12 +6,11 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <!-- Latest compiled and minified CSS -->
-
 </head>
 <% if @fondo == true %>
-<body class="fondoform ">
+<body class="fondoform " data-no-turbolink="true">
 <% else %>
-<body class="fondo">
+<body class="fondo" data-no-turbolink="true">
 <% end %>
 
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -30,9 +29,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <%= link_to "Películas", movies_path %>
-                    </li>
+                    
+                   
                     
                 </ul>
             </div>
@@ -41,7 +39,10 @@
         <!-- /.container -->
     </nav>
 
-<br></br>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
 <%= yield %>
 
 </body>

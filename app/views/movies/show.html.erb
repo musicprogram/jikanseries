@@ -1,18 +1,30 @@
 <div class="container-fluid fondo_i">
   
 <div class="">
-  <p id="notice"><%= notice %></p>
 
-
+  
 <div class="row">
-  <div class="col-md-5"><%= image_tag @movie.avatar.url,  class:'imagen_1 img-responsive' %></div>
+  <div class="col-md-5">
+    <%= image_tag @movie.avatar.url,  class:'imagen_1 img-responsive' %>
+  
+  </div>
   <div class="col-md-7">
-   <h1 class="page-header nn">
+   <h1 class="page nn">
      <%= @movie.name %>
     
-      <small class="iz"><a href="<%= @movie.link %>">Ver Película</a></small>
+      <small class="iz">
+        <%= link_to "Ver pelicula", "#{@movie.link}", :target => "_blank" %>
+       
+      </small>
    </h1>
-   
+   <% if estrella_pelicula != 0 %>
+     <div class="calificacion">
+       <%= image_tag("star1.png", class:'estrella_1')  %>
+      <h1 class="puntua">
+         <%= estrella_pelicula.to_s %>
+      </h1>  
+     </div>
+    <% end %> 
    <table  class="table table-hover">
      <tr>
        <td> <strong>Año:</strong>
@@ -33,7 +45,7 @@
              <b>Actores:</b>  <%= @movie.actors %>
            </div>
            <div class="col-md-6 descripciont" id="categoria">
-             <b>Categoría:</b>  <%= @movie.category.name %>, TAGS <%= @movie.tag %>
+             <b>Categoría:</b>  <%= @movie.category.name rescue nil %>, TAGS <%= @movie.tag %>
            </div>
          </div>    
        </div>
@@ -49,19 +61,36 @@
 </div>
     <br>
   <div class="row">
-    <div class="col-md-5"><iframe class="sombra_1" src="<%= @movie.video %>" frameborder="0" allowfullscreen></iframe></div>
+    <div class="col-md-5">
+     <div class="embed-container">
+       <iframe class="sombra_1" src="<%= @movie.video %>" frameborder="0" allowfullscreen></iframe>
+     </div>
+      
+      </div>
     <div class="col-md-7">
     
      <div class="descripcion scroll">
   
     <%= render 'list_comments' %>
   </div>
+  <br>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=1597203110511588";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
+<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
     </div>
   </div>
-<%= link_to 'Editar', edit_movie_path(@movie) %> |
-<%= link_to 'Atras', movies_path %>
-
+  
+<% if user_signed_in? %>
+  <%= link_to 'Editar', edit_movie_path(@movie) %> |
+  <%= link_to 'Atras', movies_path %>
+<% end %>
 
   <!-- Button trigger modal -->
 
@@ -82,8 +111,8 @@
   </div>
 </div>
 
-  
-    
+
+
  
 </div>
 
