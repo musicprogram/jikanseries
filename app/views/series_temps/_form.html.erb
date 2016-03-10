@@ -1,0 +1,36 @@
+<%= form_for(@series_temp) do |f| %>
+  <% if @series_temp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@series_temp.errors.count, "error") %> prohibited this series_temp from being saved:</h2>
+
+      <ul>
+      <% @series_temp.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  
+  
+  <div id="season">
+    <%= f.fields_for :seasons do |season| %>
+     <%= render 'season_fields', f: season %>
+    <% end %>     
+    <div class="links">
+      <%= link_to_add_association 'Agregar Temporada', f, :seasons %>
+
+    </div>
+     
+  </div>
+  
+  
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -21,7 +21,7 @@
                        <div class="media">
                            <p class="pull-right"><small>Comentado hace <%= distance_of_time_in_words(comment.created_at - Time.now) %></small></p>
                             <a class="media-left" href="#">
-                              <img src="http://lorempixel.com/40/40/people/1/">
+                              <%= image_tag("user-icon.png")%>
                             </a>
                             <div class="media-body">
                                 

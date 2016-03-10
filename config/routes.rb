@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :series_temps
   devise_for :users
   resources :categories
   resources :movies do

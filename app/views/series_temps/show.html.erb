@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @series_temp.name %>
+</p>
+
+<p>
+  
+  
+  
+<table class="table table-hover" >
+  <thead>
+    <tr>
+      <th>Temporadas</th>
+    
+    </tr>
+  </thead>
+
+  <tbody>
+     <% @series_temp.seasons.each do |season| %>
+    
+     <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample_<%= season.id %>" aria-expanded="false" aria-controls="collapseExample_<%= season.id %>">
+       <%= season.name %>
+    </a>
+
+<div class="collapse" id="collapseExample_<%= season.id %>">
+  <div class="well">
+   
+            <%= season.name %>
+      
+        <% season.chapters.each do |chapter| %>
+        
+              <h1><b><%= chapter.name %></b></h1>
+              In, totam, quidem, ipsam eligendi quod ipsum quasi optio excepturi earum corporis numquam quae est harum veritatis mollitia officia eos vitae expedita.
+        
+        <% end %>
+  </div>
+</div>    
+     
+      
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+  
+</p>
+
+
+<%= link_to 'Edit', edit_series_temp_path(@series_temp) %> |
+<%= link_to 'Back', series_temps_path %>
+

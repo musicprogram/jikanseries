@@ -11,23 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218174016) do
-
-  create_table "actors", force: :cascade do |t|
-    t.string   "name"
-    t.string   "last_name"
-    t.integer  "movie_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "actors", ["movie_id"], name: "index_actors_on_movie_id"
+ActiveRecord::Schema.define(version: 20160310171321) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "chapters", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "season_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "chapters", ["season_id"], name: "index_chapters_on_season_id"
 
   create_table "comments", force: :cascade do |t|
     t.string   "user"
@@ -39,6 +38,13 @@ ActiveRecord::Schema.define(version: 20160218174016) do
   end
 
   add_index "comments", ["movie_id"], name: "index_comments_on_movie_id"
+
+  create_table "jik_series", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "movies", force: :cascade do |t|
     t.string   "name"
@@ -58,6 +64,28 @@ ActiveRecord::Schema.define(version: 20160218174016) do
     t.datetime "avatar_updated_at"
     t.text     "actors"
     t.integer  "category_id"
+  end
+
+  create_table "seasons", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "series_temp_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "seasons", ["series_temp_id"], name: "index_seasons_on_series_temp_id"
+
+  create_table "series", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "series_temps", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
