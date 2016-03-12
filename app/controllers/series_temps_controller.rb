@@ -69,6 +69,6 @@ class SeriesTempsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def series_temp_params
-      params.require(:series_temp).permit(:name, seasons_attributes: [:id, :name, :_destroy , chapters_attributes: [:id, :name, :_destroy] ])
+      params.require(:series_temp).permit(:name, :link, :video, :tag, :description, :year, :director, :duration, :country,  :baner,:imagen, seasons_attributes: [:id, :name, :link, :video, :tag, :description, :year, :imagen, :_destroy , chapters_attributes: [:id, :name, :link, :video, :tag, :description, :duration, :imagen, :_destroy] ])
     end
 end

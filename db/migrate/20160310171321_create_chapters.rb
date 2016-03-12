@@ -3,7 +3,13 @@ class CreateChapters < ActiveRecord::Migration
     create_table :chapters do |t|
       t.string :name
       t.belongs_to :season, index: true, foreign_key: true
-
+      
+      t.string :link
+      t.string :video
+      t.string :tag
+      t.text :description
+      t.string :duration
+      
       t.timestamps null: false
     end
   end

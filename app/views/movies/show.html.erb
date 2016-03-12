@@ -39,24 +39,24 @@
    </table>
    <div class="row">
        <div class="col-md-12 ">
-         <div class="">
-             
-           <div class="col-md-6 descripciont" id="actores">
-             <b>Actores:</b>  <%= @movie.actors %>
-           </div>
-           <div class="col-md-6 descripciont" id="categoria">
-             <b>Categoría:</b>  <%= @movie.category.name rescue nil %>, TAGS <%= @movie.tag %>
-           </div>
-         </div>    
+           <div class="descripcion">
+              <h5 class="letrashow">
+                <b>Categoría:</b>  <p><%= @movie.category.name rescue nil %></p>
+                <b>Actores:</b>  <p>
+                    <%= @movie.actors %>
+                    </p> 
+                 <b>Descripciòn</b> <p>
+                     <%= @movie.description %>
+                 </p>
+              </h5>
+            </div>
+        
+
+           
        </div>
      
    </div>
-      <br>
-<div class="descripcion">
-  <h5 class="letrashow">
-    <%= @movie.description %>
-  </h5>
-</div>
+
   </div>
 </div>
     <br>

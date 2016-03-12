@@ -104,11 +104,13 @@ img{
               <div class="row">
                 <div class="col-sm-12 col-md-6">
                   <%= link_to  movie do %>
-                   <%= image_tag movie.avatar, class:'img-responsive sombra' %>
+                   <%= image_tag movie.avatar, class:'img-responsive  baja' %>
                   <% end %>
                 </div>
                 <div class="col-sm-12 col-md-6">
-                 <iframe class="sombra" src="<%= movie.video %>" frameborder="0" allowfullscreen></iframe>
+                <div class="embed-container baja bb">    
+                 <iframe src="<%= movie.video %>" frameborder="0" allowfullscreen></iframe>
+                </div> 
                 </div>
               </div>
                 

@@ -1,55 +1,130 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @series_temp.name %>
-</p>
-
-<p>
-  
-  
-  
-<table class="table table-hover" >
-  <thead>
-    <tr>
-      <th>Temporadas</th>
+  <p id="notice"><%= notice %></p>
+<% a = 0 %>
+<script>
+  $(document).on('page:change', function () {
     
-    </tr>
-  </thead>
 
-  <tbody>
-     <% @series_temp.seasons.each do |season| %>
-    
-     <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample_<%= season.id %>" aria-expanded="false" aria-controls="collapseExample_<%= season.id %>">
-       <%= season.name %>
-    </a>
+  });
+</script>
 
-<div class="collapse" id="collapseExample_<%= season.id %>">
-  <div class="well">
+
+<div class="foto">
+         
+          <%= image_tag @series_temp.imagen %>  
+          
+       </div>
+       <h1 class="titulo"><%= @series_temp.name %></h1> 
+    <br> <br>
+
+
+
+<div class="container-fluid">
+        <%     youtube =  @series_temp.video.split("=").last
+               youtube =  "https://www.youtube.com/embed/" + youtube  
+              %>
    
-            <%= season.name %>
+         <iframe class="video_y1" src="<%= youtube %>" frameborder="0" allowfullscreen></iframe>
       
-        <% season.chapters.each do |chapter| %>
-        
-              <h1><b><%= chapter.name %></b></h1>
-              In, totam, quidem, ipsam eligendi quod ipsum quasi optio excepturi earum corporis numquam quae est harum veritatis mollitia officia eos vitae expedita.
-        
-        <% end %>
+</div>
+
+<div class="container-fluid">
+  <div class="col-xs-6">
+    <div class="hidden-xs">
+  <dl class="dl-horizontal let">
+    <dt>Tag</dt>
+    <dd><%= @series_temp.tag %></dd>
+    <dt>Año</dt>
+    <dd><%= @series_temp.year %></dd>
+    <dt>Director</dt>
+    <dd><%= @series_temp.director %></dd>
+    <dt>Duraciòn</dt>
+    <dd><%= @series_temp.duration %></dd>
+    <dt>Paìs</dt>
+    <dd><%= @series_temp.country %></dd>
+    <dt>Descargar</dt>
+    <dd><%= @series_temp.link %></dd>
+    <dt>Descripciòn</dt>
+    <dd><%= @series_temp.description %></dd>
+  </dl>
+</div>
+
   </div>
-</div>    
-     
-      
-    <% end %>
-  </tbody>
-</table>
+  <div class="col-xs-6">
 
+</div>
 
+  </div>
 
-
+    
+<div class="container">
   
-</p>
+<hr>
+<h1 class="tex-center">Capìtulos</h1>
+</div>
 
+
+
+
+
+
+ 
+    <div class="container-fluid">
+      <section id="pinBoot">
+       <% @series_temp.seasons.each do |season| %>
+       
+      
+       
+      <% season.chapters.each do |chapter| %>
+      
+      <article class="white-panel"> <%= image_tag chapter.imagen %>
+        <h2 class="centrar"><%= chapter.season.name %></h2>
+        <h4 class="centrar"><%= chapter.name %></h4>
+        <p class="centrar"><%= chapter.description %></p>
+        
+             <% youtube_2 = chapter.video.split("=").last
+                youtube_2 =  "https://www.youtube.com/embed/" + youtube_2  
+              %>
+              
+              <div class="embed-container">
+                              <iframe class="video_y1" src="<%= youtube_2 %>" frameborder="0" allowfullscreen></iframe>
+
+              </div>
+        
+        
+      <p class="centrar">
+          <%= chapter.description  %>
+   
+              
+        </p>
+        <div class="embed-container">
+                              <iframe class="video_y1" src="<%= chapter.link %>" frameborder="0" allowfullscreen></iframe>
+
+              </div>
+        
+        
+      </article>
+     
+      <% end %>
+     
+
+      <% end %>
+
+    </section>
+
+    </div>
+
+
+
+
+
+
+
+<div class="container">
+  
 
 <%= link_to 'Edit', edit_series_temp_path(@series_temp) %> |
 <%= link_to 'Back', series_temps_path %>
+
+</div>
 
